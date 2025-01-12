@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* background: radial-gradient(circle at top left, #101623, #050b19); */
+  background-color: #101623;
+  color: #b3b6d8;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+}
+
+
+

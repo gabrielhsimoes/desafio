@@ -1,0 +1,30 @@
+<div class="backdrop" (click)="getCancel()"></div>
+
+<dialog open *ngIf="post">
+  <h2>Alterar Post</h2>
+  <form (ngSubmit)="updatePost()">
+    <p>
+      <label for="title">Título</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        [(ngModel)]="post.title"
+        required
+      />
+    </p>
+    <p>
+      <label for="body">Texto</label>
+      <textarea
+        id="body"
+        rows="5"
+        name="body"
+        [(ngModel)]="post.body"
+      ></textarea>
+    </p>
+    <p class="actions">
+      <button type="button" (click)="getCancel()">Cancelar</button>
+      <button type="submit">Salvar</button>
+    </p>
+  </form>
+</dialog>

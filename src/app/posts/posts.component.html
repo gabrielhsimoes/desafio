@@ -1,0 +1,52 @@
+<app-new-post (postCreated)="onPostCreated($event)"></app-new-post>
+
+<app-edit-post
+  *ngIf="abrirModal"
+  [post]="postSelecionado"
+  (cancel)="cancelModalPost()"
+  (updated)="getPosts()"
+></app-edit-post>
+
+<div class="max-w-[400px] custom-post" *ngFor="let posts of post">
+  <div>
+    <div style="width: 90%;text-align: justify;">
+      <div style="margin-bottom: 3px">
+        <h1 style="font-size: 12px" class="">&#64;{{getUsernameForPost(posts.id)}}</h1>
+      </div>
+
+      <div>
+        <h1 style="font-size: 16px; font-weight: bold">{{ posts.title }}</h1>
+      </div>
+
+      <div style="font-size: 13px">
+        <h1>{{ posts.body }}</h1>
+      </div>
+    </div>
+
+    <div style="margin-left: auto;font-size: 12px;">
+      <button (click)="deletePost(posts.id)">
+        <!-- <img src="assets/images/delete.png" alt="Excluir" width="23"> -->
+         Excluir
+      </button>
+    </div>
+
+  </div>
+
+  <div class="custom-actions">
+    <img
+      class="mg-img"
+      src="assets/images/comments.png"
+      alt="Logo de comentários"
+      width="20"
+    />
+    <span (click)="onModalPost(posts.id)">
+      <img
+        class="mg-img"
+        src="assets/images/edit.png"
+        alt="Logo para editar"
+        width="16"
+      />
+    </span>
+  </div>
+</div>
+

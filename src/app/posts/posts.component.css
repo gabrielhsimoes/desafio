@@ -1,0 +1,21 @@
+.custom-post{
+  margin: auto;
+  padding: 1%;
+  border-top: 1px solid #ffffff3b
+}
+
+.custom-post > div{
+  display: flex;
+}
+
+.custom-actions{
+  display: flex;
+  flex-direction: row;
+  padding: 3%;
+  align-items: center;
+  justify-content: end;
+}
+
+.mg-img{
+  margin: 0px 5px;
+}

@@ -1,0 +1,30 @@
+<div style="margin: auto">
+  <form (ngSubmit)="createPost()"
+    class="max-w-[400px]"
+    action=""
+    method="post"
+    style="margin: 2%; margin: auto"
+  >
+  <p style="margin: 5px 0px;display: grid;">
+    <label for="title">Titulo:</label>
+    <input type="text" name="title" [(ngModel)]="title">
+  </p>
+    <p style="margin: auto; display: grid">
+      <textarea [(ngModel)]="post"
+        rows="4"
+        name="post"
+        id="post"
+        placeholder="No que você está pensando?"
+      ></textarea>
+    </p>
+
+    <p style="margin: 5px 0px; text-align: right; margin-bottom: 1em; ">
+      <button
+        type="submit" style="background-color: #394d8a;"
+        class="px-3 py-2 text-xs font-medium text-center text-white rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Add post
+      </button>
+    </p>
+  </form>
+</div>
