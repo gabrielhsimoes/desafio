@@ -5,30 +5,26 @@ import { Post } from '../post.model';
 @Component({
   selector: 'app-edit-post',
   templateUrl: './edit-post.component.html',
-  styleUrls: ['./edit-post.component.css']
+  styleUrls: ['./edit-post.component.css'],
 })
 export class EditPostComponent {
-
   @Input() post: Post | null = null;
   @Output() cancel = new EventEmitter();
   @Output() updated = new EventEmitter();
 
-  constructor(private postService: PostsService){}
+  constructor(private postService: PostsService) {}
 
   updatePost() {
     if (this.post) {
-      // Atualiza o post localmente no serviço
       this.postService.updatePost(this.post.id, this.post);
 
-      // Emite o evento de atualização com o post atualizado
-      this.updated.emit(this.post);  // Passando o post atualizado
+      this.updated.emit(this.post);
 
-      this.cancel.emit();  // Emite o evento de cancelamento
+      this.cancel.emit();
     }
   }
 
-  getCancel(){
+  getCancel() {
     this.cancel.emit();
   }
-
 }

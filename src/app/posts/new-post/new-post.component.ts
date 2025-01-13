@@ -16,7 +16,7 @@ export class NewPostComponent {
   constructor(private postService: PostsService) {}
 
   createPost() {
-    const newPost: NewPost = { title: this.title, body: this.post, userId: 1 }; // Adicionando userId
+    const newPost: NewPost = { title: this.title, body: this.post, userId: 1 };
     this.postService.createPosts(newPost).subscribe(
       (createdPost) => {
         this.postCreated.emit(createdPost);
@@ -24,7 +24,7 @@ export class NewPostComponent {
         this.post = '';
       },
       (error) => {
-        console.error('Erro ao criar o post', error); // Adicionando um tratamento de erro
+        console.error('Erro ao criar o post', error);
       }
     );
   }

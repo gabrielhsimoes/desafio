@@ -49,7 +49,6 @@ export class PostsService {
 
   // Método para criar posts e salvar no localStorage
   createPosts(post: NewPost): Observable<Post> {
-    // Gerar um id único baseado no timestamp atual
     const uniquePostId = Date.now();
 
     // Adicionar o id gerado ao post
@@ -78,7 +77,6 @@ export class PostsService {
   updatePost(postId: number, updatedPost: Post): void {
     const index = this.post.findIndex((post) => post.id === postId);
 
-    // Adicionando o console log para depuração
     console.log(
       `Procurando post com ID: ${postId}. Índice encontrado: ${index}`
     );
@@ -86,12 +84,10 @@ export class PostsService {
     if (index !== -1) {
       this.post[index] = { ...updatedPost };
 
-      // Adicionando o console log para ver o post atualizado
       console.log(`Post atualizado: `, updatedPost);
 
       this.savePosts();
     } else {
-      // Adicionando o console log caso o post não seja encontrado
       console.log(`Post com ID: ${postId} não encontrado.`);
     }
   }
