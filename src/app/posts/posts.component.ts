@@ -70,5 +70,12 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  onPostUpdated(updatedPost: Post) {
+    const index = this.post.findIndex(post => post.id === updatedPost.id);
+    if (index !== -1) {
+      this.post[index] = updatedPost;  // Substitui o post existente
+    }
+  }
+
 
 }

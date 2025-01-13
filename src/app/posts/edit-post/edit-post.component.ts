@@ -19,8 +19,11 @@ export class EditPostComponent {
     if (this.post) {
       // Atualiza o post localmente no serviço
       this.postService.updatePost(this.post.id, this.post);
-      this.updated.emit();  // Emite o evento de atualização
-      this.cancel.emit();   // Emite o evento de cancelamento
+
+      // Emite o evento de atualização com o post atualizado
+      this.updated.emit(this.post);  // Passando o post atualizado
+
+      this.cancel.emit();  // Emite o evento de cancelamento
     }
   }
 
